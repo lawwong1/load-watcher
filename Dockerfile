@@ -1,4 +1,6 @@
-FROM golang:1.16
+FROM dockerhub.paypalcorp.com/golang:1.22-bullseye AS builder
+
+ENV GOPROXY=https://artifactory.g.devqa.gcp.dev.paypalinc.com/artifactory/api/go/go
 WORKDIR /go/src/github.com/paypal/load-watcher
 COPY . .
 RUN make build
