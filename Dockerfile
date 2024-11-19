@@ -1,4 +1,5 @@
-FROM golang:1.16
+FROM golang:1.22
+
 WORKDIR /go/src/github.com/paypal/load-watcher
 COPY . .
 RUN make build
