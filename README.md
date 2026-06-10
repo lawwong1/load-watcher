@@ -19,6 +19,11 @@ The default `main.go` is configured to watch Kubernetes Metrics Server.
 You can change this to any available metrics provider in `pkg/metricsprovider`.
 To build a client for new metrics provider, you will need to implement `FetcherClient` interface.
 
+Instructions to export PayPal root CA from macOS Keychain (required for docker build)
+1) cd to root directory
+2) run the following:
+security find-certificate -c "PayPal Crypto Mgt Corp Root CA" -p /Library/Keychains/System.keychain > paypal-crypto-root-ca.crt
+
 From the root folder, run the following commands to build docker image of load watcher, tag it and push to your docker repository:
 
 ```
